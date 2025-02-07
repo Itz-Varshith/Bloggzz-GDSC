@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Signup</title>
+    <style>
+      .main-body{
+        display:flex;
+        flex-direction: row;
+        height:100%;
+        /* align-items : center;
+        justify-content: center; */
+        background-image: url('/images/mainLogo.webp');
+        background-size: cover;
+        background-position: 5px;
+        background-position: center;
+        
+
+      }
+      .main-form{
+        display: flex;
+        align-items : center;
+        justify-content: center;
+        width:50%;
+        /* background-image: url('https://img.freepik.com/free-vector/abstract-background_53876-43362.jpg'); */
+        background-size: cover;
+        font-weight:600;
+        margin:0px;
+      }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div  class="main-body">
+      <div class="main-form">
+    <form class="mx-3 mt-3" action="/user/signup" method="post">
+        <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" aria-describedby="emailHelp" name="fullName" required="true">
+          </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required="true">
+        </div>
+        <div class="mb-3 mt-3 ">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required="true">
+        </div>
+       <div class="mt-3">
+        <label for="userRole">Choose Role:</label>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="userRole" value="viewer" id="viewer">
+    <label class="form-check-label" for="viewer">
+        Viewer
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="userRole" value="author" id="author">
+    <label class="form-check-label" for="author">
+        Author
+    </label>
+</div>
+<div class="mt-3">
+  <label for="userRole">Choose Role:</label>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="gender" value="male" id="viewer">
+<label class="form-check-label" for="viewer">
+  Male
+</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="gender" value="female" id="author">
+<label class="form-check-label" for="author">
+  Female
+</label>
+</div>
+
+ </div>
+       </div>
+        <% if (locals.route=='signup') { %>
+          <div class="mx-3 mt-3 mb-3">
+            Click here to go to  <a href="/user/login">login </a>page
+           </div>
+        <% } %>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    </div>
+    <div>
+      <%- include('./partials/footer') %>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

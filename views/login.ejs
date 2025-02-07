@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Login</title>
+    <style>
+      .main-body{
+        display:flex;
+        flex-direction: row;
+        height:100%;
+        /* align-items : center;
+        justify-content: center; */
+        background-image: url('/images/mainLogo.webp');
+        background-size: cover;
+        background-position: 5px;
+        background-position: center;
+      }
+      .main-form{
+        display: flex;
+        align-items : center;
+        justify-content: center;
+        width:50%;
+        /* background-image: url('https://img.freepik.com/free-vector/abstract-background_53876-43362.jpg'); */
+        background-size: cover 50%;
+        font-weight:600;
+        margin:0px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    
+    <div class="main-body">
+      <div class="main-form">
+    <form class="mx-3 mt-3" action="/user/login" method="post">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          aria-describedby="emailHelp"
+          name="email"
+          required="true"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required="true"
+        />
+      </div>
+      <% if (locals.route=='login') { %>
+        <div class="mx-3 mt-3 mb-3">
+          Click here to go to  <a href="/user/signup">Signup </a>page
+         </div>
+      <% } %>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <!-- <div class="filler">
+    This is some content
+  </div> -->
+  </div>
+ <div>
+  <%- include('./partials/footer') %>
+ </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Add New Blog</title>
+    <style>
+      .main-body{
+        display:flex;
+        flex-direction: row;
+        height:100%;
+        /* align-items : center;
+        justify-content: center; */
+        background-image: url('/images/mainLogo.webp');
+        background-size: cover;
+        background-position: 5px;
+        background-position: center;
+      }
+      .main-form{
+        display: flex;
+        align-items : center;
+        justify-content: center;
+        width:40%;
+        /* background-image: url('https://img.freepik.com/free-vector/abstract-background_53876-43362.jpg'); */
+        background-size: cover 50%;
+        font-weight:600;
+        margin:0px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="main-body">
+      <div class="main-form">
+      <form action="/blog/" method="post" enctype="multipart/form-data" style="width:80%">
+        <div class="mb-3">
+            <label for="coverImage" class="form-label">Cover Image</label>
+            <input
+              type="file"
+              class="form-control"
+              id="coverImage"
+              name="coverImage"
+              aria-describedby="coverImage"
+              required="true"
+            />
+          </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            aria-describedby="title"
+            required="true"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="body" class="form-label">Body</label>
+
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              id="autoExpand"
+              style="height: 100px;max-height: 40vh;overflow-y: auto"
+              
+              name="body"
+              required="true"
+              
+            ></textarea>
+            <label for="floatingTextarea2">Enter Here</label>
+          </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Read Time(in minutes)</label>
+            <input
+              type="text"
+              class="form-control"
+              id="readTime"
+              name="readTime"
+              aria-describedby="readTime"
+              required="true"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    <div>
+      <%- include('./partials/footer') %>
+     </div>
+
+      <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const textarea = document.getElementById("autoExpand");
+
+    textarea.addEventListener("input", function() {
+        this.style.height = "auto";  
+        this.style.height = this.scrollHeight + "px"; 
+    });
+});
+</script>
+
+    <%- include('./partials/scripts') %>
+  
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Delete Account</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container mt-3 " style="margin:0 auto">
+      By deleting your account all the data related to your account will be deleted and you can't log back in but the blogs created by you if any will continue to exist and will be available for the audience to view and the data will be shown.
+      <form action="/user/delete-account" method="POST" class="text-center">
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete your account?');">
+        Delete Account
+        </button>
+      </form>
+    </div>
+    <div>
+      <%- include('./partials/footer') %>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

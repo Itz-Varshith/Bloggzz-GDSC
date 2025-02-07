@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Settings</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container mt-3 " style="margin:0 auto">
+        <h1>Settings</h1>
+        <% if (locals.user.role=='viewer') { %>
+            <div for="Upgrade to Author">
+                <p><span style="font-weight: 700;">Upgrade to author</span> by doing this you will be ableto publish your writngs as a    form of ecpression to the global levle a</p>
+                <form action="/user/upgradeToAuthor" method="post" class="text-center" style="display:inline">
+                    <button type="submit" class="btn btn-primary">
+                    Upgrade to author
+                    </button>
+                  </form>
+            </div>
+        <% } else{%>
+            <div for="Edit blogs"> Click here to view all your blogs and edit the content with in the blogs to make them more interresting and useful!!</div>
+            <a href='/blog/editBlogs'><button type="submit" class="btn btn-primary">
+                Edit Blogs
+                </button></a>
+        <% } %>
+        
+        <div for="delete-account">
+            <p>Delete your account here</p>
+            <form action="/user/delete-account" method="POST" class="text-center " style="display:inline">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete your account?');">
+                Delete Account
+                </button>
+              </form>
+        </div>
+    </div>
+    <div>
+      <%- include('./partials/footer') %>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

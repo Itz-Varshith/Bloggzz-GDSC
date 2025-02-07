@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Add New Blog</title>
+     <style>
+      .main-body{
+        display:flex;
+        flex-direction: row;
+        height:100%;
+        /* align-items : center;
+        justify-content: center; */
+        background-image: url('/images/mainLogo.webp');
+        background-size: cover;
+        background-position: 5px;
+
+      }
+      .main-form{
+        display: flex;
+        align-items : center;
+        justify-content: center;
+        width:30%;
+        background-size: cover 50%;
+        font-weight:600;
+        margin:0px;
+      }
+    </style> 
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="main-body">
+      <div class="main-form">
+      <%= locals.errorMessage %>
+    </div>
+  </div>
+    <div>
+      <%- include('./partials/footer') %>
+     </div>
+
+    <%- include('./partials/scripts') %>
+  
+  </body>
+</html>

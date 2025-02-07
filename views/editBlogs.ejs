@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Edit Blogs</title>
+    <style>
+      .custom-cont {
+    transition: transform 0.3s ease box-shadow 0.3s ease;
+    border: 3px solid black;
+}
+.custom-cont:hover {
+    transform: translate(5px,-5px) scale(1.10);
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.7);
+}
+
+.background-cont{
+  
+  height:10000%;/*The reason for keeping high percentage instead of auto is that due to auto when there are less than 3 blogs the rendering is not full so the image is not loading fully but due to this high percentage value the image renders properly*/
+  background-image: url('/images/mainLogo.webp');
+  background-size: cover;
+  /* background-position: left 50px top -20px; */
+  background-position: center;
+  
+}
+
+
+
+    </style>
+</head>
+<body class=" custom-main">
+    <%- include('./partials/nav') %>
+    <div class="background-cont">
+    <div class="container mt-3 row row-cols-3 " style="margin:0 auto">
+      <% if (blogs.length==0) { %>
+       <p style="font-weight: 700;">No blogs published yet, any blogs published will appear here</p>
+      <% } %>
+        <% blogs.forEach(blog => { %>
+          <div class="card mt-3 mb-3 mx-4 custom-cont  border  rounded" style="width: 18rem; height:auto">
+              <img src=<%= blog.coverImageUrl %> class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= blog.title %></h5>
+                <a href='/blog/edit/<%= blog._id %>' class="btn btn-primary">Edit Blog</a>
+              </div>
+          </div>
+        <% }) %>
+    </div>
+  </div>
+    <div>
+      <%- include('./partials/footer') %>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>
