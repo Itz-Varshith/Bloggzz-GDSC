@@ -98,7 +98,7 @@ router.post('/upgradeToAuthor',async (req,res)=>{
         const userToBeUpgraded=req.user;
         const updatedData={role:"author"};
         const updatedUser=await user.findByIdAndUpdate(userToBeUpgraded._id,updatedData);
-        return res.render('/',{
+        return res.render('home',{
             user:req.user,
             message:'User upgraded',
         });
