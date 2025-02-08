@@ -98,9 +98,11 @@ router.post('/upgradeToAuthor',async (req,res)=>{
         const userToBeUpgraded=req.user;
         const updatedData={role:"author"};
         const updatedUser=await user.findByIdAndUpdate(userToBeUpgraded._id,updatedData);
+        const blogs=await Blog.find({});
         return res.render('home',{
             user:req.user,
-            message:'User upgraded',
+            message:'User upgraded, please login again to get full access',
+            blogs,
         });
     } catch (error) {
         return res.redirect('/');
