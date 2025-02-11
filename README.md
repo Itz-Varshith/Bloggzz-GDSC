@@ -41,7 +41,7 @@ Ensure you have the following installed on your machine:
 - [Node.js](https://nodejs.org/en/download/) (Recommended LTS version)
 - [MongoDB](https://www.mongodb.com/try/download/community) (Ensure MongoDB is running)
 - [Git](https://git-scm.com/downloads) (optional but recommended)
-
+ Make sure to use npm install to install all the packagrs required
 ### Steps to Setup
 
 #### 1. Clone the Repository
