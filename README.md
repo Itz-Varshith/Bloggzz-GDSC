@@ -1,5 +1,5 @@
 # Bloggzz-GDSC
-Created as a project for better understanding of backend mechanisms and all the nuances of using a backend and mongodb understanding every thing related to the databases and using the basic components of bootstrap for the frontend and this will mainly focus on robust usage of backend technologies.
+Created as a project for better understanding of backend mechanisms and all the nuances of using a backend and mongodb understanding every thing related to the databases and using the basic components of bootstrap for the frontend and this will mainly focus on robust usage of backend technologies. And the deployment link is still not up it is being worked upon.
 # Blogging Website
 
 A full-stack blogging platform that allows authors to create, edit, and manage blog posts while enabling viewers to read and comment on posts. The project includes authentication using JWT tokens for secure access control.
